@@ -14,7 +14,7 @@ Initially the minefield is totally covered therefore the position of mines is un
 The purpose of the game is that of discovering all the mines without exploring a cell containing it.
 
 The initial minefield is as shown.
-![Initial state](file:///C:/Users/fj/Dropbox/restsweeper/doc/image01.png)
+![Initial state](./doc/image01.png)
 
 Besides the title, the toolbar contains three tools
 
@@ -26,21 +26,21 @@ In the initial state, the minefield is still not defined.
 Clicking in explore mode one cell, creates a minefield that has no mine under the cell being clicked, so as to be sure that it is impossible to loose the game at the very first action.
 
 After the first click, the minefield becomes something as follows.
-![Initial state](file:///C:/Users/fj/Dropbox/restsweeper/doc/image02.png)
+![Initial state](./doc/image02.png)
 
 In this case the explored cell is 1. This means that there is one mine in the eight cells around the explored one. We just try to explore one of them, hoping not to find a mine.
 
 After clicking all these cells, this is what happens.
 
-![State2](file:///C:/Users/fj/Dropbox/restsweeper/doc/image03.png)
+![State2](./doc/image03.png)
 
 We have explored one more cell that have one mine in its direct neighbourhood so we still have to test at random. Clicking in explore mode on one adjacent cells becomes as follows
 
-![State3](file:///C:/Users/fj/Dropbox/restsweeper/doc/image04.png)
+![State3](./doc/image04.png)
 
 One more one, still we have to explore randomly.
 
-![State4](file:///C:/Users/fj/Dropbox/restsweeper/doc/image05.png)
+![State4](./doc/image05.png)
 
 Exploring cell (5,6) is unlucky: a mine is found therefore all the mniefield is shown.
 The game is over.
@@ -48,15 +48,15 @@ The game is over.
 In another game, this configuration gives an interesting hint.
 Cell (4,2) is 1 and all the adjacent cells have already been explored. Therefore the only one still unexplored must containg a mine. Moreover the vertically adjacent cells hold 2 and all other cells have been explored, so we are sure that cells (3,3) and (3,4) must contain a mine, therefore we select the flag state above and we click on them: an F (meaning flagged) appears on the aforementioned cells.
 
-![State5](file:///C:/Users/fj/Dropbox/restsweeper/doc/image06.png)
+![State5](./doc/image06.png)
 
 In the following game session, almost all the mines have been flagged and only one cell (1,8) is still to be explored.
 
-![State7](file:///C:/Users/fj/Dropbox/restsweeper/doc/image08.png)
+![State7](./doc/image08.png)
 
 Clicking on it means that the player has won the game and this is signalled by the WON string above the title.
 
-![State8](file:///C:/Users/fj/Dropbox/restsweeper/doc/image09.png)
+![State8](./doc/image09.png)
  
 
 
