@@ -30,7 +30,7 @@ After the first click, the minefield becomes something as follows.
 
 In this case the explored cell is 1. This means that there is one mine in the eight cells around the explored one. We just try to explore one of them, hoping not to find a mine.
 
-After clicking all these cells, this is what happens.
+After clicking one of these cells, this is what happens.
 
 ![State2](./doc/image03.png)
 
