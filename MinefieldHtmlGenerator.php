@@ -1,14 +1,15 @@
 <?php
 	include 'Minefield.php';
 	include 'BitDecoder.php';
-	$baseUrl = "http://localhost:8080/MinefieldHtmlGenerator.php";
+	//$baseUrl = "http://localhost:8080/MinefieldHtmlGenerator.php";
+	$baseUrl = "http://www.fjmessgeraete.ch/fc225976-8977-4b3f-867e-fd0f7c0593e3/MinefieldHtmlGenerator.php";
 	$phase = $_GET["phase"];
 	$click = $_GET["click"];
 	if ($phase=='') {
 		$phase = 0;
 	}
 	if ($phase==0) {
-		$decoder = new BitDecoder("0100002231000000");
+		$decoder = new BitDecoder("0");
 		$minedfield = $decoder->GetBitmapArray(8,8);
 		$minefield = new Minefield($minedfield);
 	} else {
@@ -23,23 +24,29 @@
 		$flagField = $decoder->GetBitmapArray(8,8);
 		$decoder = new BitDecoder($uncovered);
 		$uncoveredField = $decoder->GetBitmapArray(8,8);
-		$x = hexdec(substr($action,0,1));
-		$y = hexdec(substr($action,1,1));
-		
 		$minefield = new Minefield($minedfield, $flagField, $uncoveredField);
-		if ($minefield->ClickAt($x,$y, $click=="E")) {
-			$minefield->MineFound();
-		} else {
-			if ($minefield->HasWon()) {
-				echo("WON");
+		if ($action!='') {
+			$x = hexdec(substr($action,0,1));
+			$y = hexdec(substr($action,1,1));
+			
+			if ($phase == 1) {
+				$minefield->GenerateRandomMinefield($x,$y);
+			}
+			if ($minefield->ClickAt($x,$y, $click=="E")) {
 				$minefield->MineFound();
+			} else {
+				if ($minefield->HasWon()) {
+					echo("WON");
+					$minefield->MineFound();
+				}
 			}
 		}
 	}
 	switch ($phase) {
 	case 0 : $phase = 1; break;
 	case 1 : $phase = 2; break;
-	case 2 : $phase = 2; break;
+	case 2 : $phase = 3; break;
+	case 3 : $phase = 3; break;
 	}
 	
 	function GetLink($x,$y,$state) {

@@ -71,8 +71,7 @@
 			$test->GetMineCount_WorksWell(3,4,"EBE", "***3-*8**-***3-");
 		}
 		
-		public function FullMatch_WorksWell()
-		{
+		public function FullMatch_WorksWell() {
 			$decoder = new BitDecoder("080");
 			$minemap = $decoder->GetBitmapArray(3,3);
 			$minefield = new Minefield($minemap);
@@ -85,8 +84,7 @@
 			}
 		}
 		
-		public function GetMineBitmapEncoded_WorksWell()
-		{
+		public function GetMineBitmapEncoded_WorksWell() {
 			$decoder = new BitDecoder("080");
 			$minemap = $decoder->GetBitmapArray(3,3);
 			$minefield = new Minefield($minemap);
@@ -109,10 +107,30 @@
 			echo( $encoder->Encode());
 
 		}
+
+		public function GenerateRandomMinefield_WorksWell() {
+			$decoder = new BitDecoder("0");
+			$minemap = $decoder->GetBitmapArray(8,8);
+			$minefield = new Minefield($minemap);
+			echo($minefield->ShowField()."\n------------------\n");
+			$minefield->GenerateRandomMinefield(0,0);
+			$minefield->MineFound();
+			echo($minefield->ShowField()."\n------------------\n");
+			$minefield->GenerateRandomMinefield(1,1);
+			$minefield->MineFound();
+			echo($minefield->ShowField()."\n------------------\n");
+			$minefield->GenerateRandomMinefield(2,2);
+			$minefield->MineFound();
+			echo($minefield->ShowField()."\n------------------\n");
+			$minefield->GenerateRandomMinefield(3,3);
+			echo($minefield->ShowField()."\n------------------\n");
+			$minefield->MineFound();
+		}
 	}
 	
 	$test = new MinefieldUnitTests();
 	//$test->CreateBooleanArray_WorksWell();
 	//$test->FullMatch_WorksWell();
-	$test->GetMineBitmapEncoded_WorksWell();
+	//$test->GetMineBitmapEncoded_WorksWell();
+	$test->GenerateRandomMinefield_WorksWell();
 ?>
