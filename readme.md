@@ -6,7 +6,7 @@ As a proof-of-concept it has been designed and developed with simplicity in mind
 
 The minefield is square featuring 8 rows and 8 columns and 15% of its 64 cells is filled randomly with mines.
 
-Besides the source code, the executable code can be seen in action here [Restsweeper](http://www.fjmessgeraete.ch/fc225976-8977-4b3f-867e-fd0f7c0593e3/MinefieldHtmlGenerator.php)
+Besides the source code, the executable code can be seen in action here [Restsweeper](http://www.fjmessgeraete.ch/fc225976-8977-4b3f-867e-fd0f7c0593e3/MinefieldHtmlGenerator.php?state=0&click=E)
 
 ## Rules and minefield
 
